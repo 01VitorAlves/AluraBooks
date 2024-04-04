@@ -1,0 +1,202 @@
+.cabecalho_menu_hamburguer{
+    
+    display: inline-block;
+
+    background-image: url("../assets/header/Menu.svg");
+    background-position: center;
+
+    width: 40px;
+    height: 40px;
+
+    
+}
+
+.container_botao:checked ~ .menu_hamburguer > .cabecalho_menu_hamburguer{
+    background-image: url("../assets/header/MenuAberto.svg");
+}
+
+.container_botao:checked ~ .menu_hamburguer{
+    background: var(--azul);
+     
+}
+
+.cabecalho{
+    background-color: var(--branco);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* aqui estou falando que o cabeçalho não é mais um elemento estatico, sua posição é livre, mas não altero nada */
+
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 1rem;
+    padding-right: 2rem;
+}
+
+
+
+.container_lista_menu{
+    display: none;
+    position: absolute; /* Aqui estou falando q posso mover a lista para onde eu quiser, sua posição é em relação ao cabeçalho q eu tornei livre */
+    top: 100%; /* Por fim, a posição da lista depende do cabeçalho, aqui falo para descer 100% */
+    width: 60vw;
+}
+
+.container_botao{
+    display: none;
+}
+
+.container_botao:checked ~ .container_lista_menu{
+    display: block;
+}
+
+.titulo_lista, .item_lista {
+    padding: 1em;
+    background-color: var(--branco);
+}
+
+.titulo_lista{
+    color: var(--laranja);
+    font-weight: 700;
+}
+
+
+.item_lista_link{
+    background: var(--azul-degrade);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+    text-transform: uppercase;
+
+}
+
+
+
+
+.container_texto{
+    display: none;
+}
+
+
+.cabecalho_titulo{
+    display: none;
+}
+
+.opcoes{
+    display: none;
+}
+
+
+
+
+
+@media screen and (min-width: 1024px) {
+    .cabecalho_titulo, .cabecalho_titulo_negrito{
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+
+    }
+
+    .cabecalho_titulo{
+        display: block;
+        font-weight: 400;
+
+    }
+    
+    .cabecalho_titulo_negrito{
+        font-weight: 700;
+
+    }
+
+
+
+    .opcoes{
+        display: flex;
+    }
+
+   
+
+    .opcoes_item{
+        padding:1em;
+        text-transform: uppercase;
+
+    }
+
+    .opcoes_link{
+        text-decoration: none;
+        color: black;
+    }
+
+    .icone_favoritos{
+        display: none;
+    }
+
+    .cabecalho_menu_hamburguer{
+        display: none;
+    }
+
+
+
+
+    .opcoes_botao:checked ~ .container_lista_menu{
+        display: block;
+        width: auto;
+    }
+
+    .opcoes_botao{
+        display: none;
+    }
+
+    .opcoes_botao:checked ~ .opcoes_rotulo > .opcoes_item{
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+    .item_lista:hover{
+        background: var(--azul-degrade);
+        
+    }
+
+    .item_lista:hover > .item_lista_link{
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+}
+
+
+
+
+
+
+@media screen and (min-width: 1728px) {
+
+    .container_texto{
+        display: block;
+    }
+
+    .container_cabecalho_icones{
+        display: flex;
+        align-items: center;
+
+        text-decoration: none;
+
+        color: black;
+        gap: 0.5em;
+        
+    }
+
+    .cabecalho{
+        padding: 0 2em;
+    }
+
+    .opcoes{
+        margin-right: auto;
+    }
+}

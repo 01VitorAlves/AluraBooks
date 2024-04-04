@@ -1,0 +1,70 @@
+hr{
+    margin: 0;
+}
+
+
+.rodape_titulo{
+    padding: 1em;
+}
+
+
+
+
+
+.lista_rodape{
+    display: none;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .rodape{
+        display: flex;
+         justify-content: space-around; /*igual space between mas ele já considera a margem, não ficando grudado no fim da tela */
+    }
+
+    .rodape_titulo{
+        font-size: 24px;
+    }
+
+    .lista_rodape_titulo{
+        font-size: 14px;
+        color: #858585;
+
+        margin-top: 2em;
+        margin-bottom: 1em;
+
+    }
+
+    .lista_rodape{
+        display: block;
+        margin-bottom: 3em;
+    }
+
+    .lista_rodape_item{
+        display: flex;
+        align-items: center;
+        margin: 0.6em 0;
+    }
+
+    .lista_rodape_link{
+        text-decoration: none;
+        color: var(--cinza);
+
+        margin-left: 0.6em;
+    }
+    
+}
+
+
+
+
+@media screen and (min-width:1728px) {
+    .lista_rodape{
+        border-left: 1px solid var(--cinza);
+        padding-left: 1em;
+    }
+
+    .rodape{
+        padding: 3em 0;
+    }
+}
